@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hoa Viên</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f5fbf6;
+  color: #173b28;
+}
+
+.header {
+  background: #123f25;
+  color: white;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.status {
+  background: #1d5a35;
+  padding: 8px 14px;
+  border-radius: 20px;
+}
+
+.container {
+  padding: 18px;
+}
+
+.tabs,
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+button {
+  border: 2px solid #d7eadc;
+  background: white;
+  color: #6b9377;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button.active {
+  background: #123f25;
+  color: white;
+  border-color: #123f25;
+}
+
+.search {
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  border: 2px solid #d7eadc;
+  font-size: 18px;
+  margin-bottom: 22px;
+}
+
+.section-title {
+  color: #e22891;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.card {
+  background: white;
+  border: 2px solid #d7eadc;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 14px;
+}
+
+.card h3 {
+  margin: 0 0 10px;
+  color: #e22891;
+  font-size: 22px;
+}
+
+.tag {
+  display: inline-block;
+  background: #ffe5f3;
+  color: #d82789;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-weight: bold;
+  margin: 4px 4px 4px 0;
+  font-size: 14px;
+}
+
+.member {
+  background: #dff3ff;
+  color: #1675a1;
+}
+
+.group {
+  background: #eee7ff;
+  color: #6e42c1;
+}
+
+.form {
+  background: white;
+  border: 2px solid #d7eadc;
+  padding: 15px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.form input,
+.form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #cde2d2;
+  border-radius: 10px;
+}
+
+.form button {
+  width: 100%;
+  background: #e22891;
+  color: white;
+  border: none;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .card img {
+    height: 140px;
+  }
+
+  .card h3 {
+    font-size: 17px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>🌺 Hoa Viên</h1>
+  <div class="status">🟢 Kết nối</div>
+</div>
+
+<div class="container">
+
+  <div class="tabs">
+    <button class="active">🌸 Hoa</button>
+    <button>✅ Đánh dấu</button>
+    <button>👥 Thành viên</button>
+    <button onclick="toggleForm()">⚙️ Quản lý</button>
+  </div>
+
+  <div class="filters">
+    <button class="active" onclick="filterFlower('all')">Tất cả</button>
+    <button onclick="filterFlower('Tím')">🟣 Tím</button>
+    <button onclick="filterFlower('Cam')">🟠 Cam</button>
+    <button onclick="filterFlower('Đỏ hồng')">🔴 Đỏ hồng</button>
+  </div>
+
+  <input class="search" id="searchInput" placeholder="🔍 Tìm tên hoa..." oninput="renderFlowers()" />
+
+  <div class="form" id="formBox" style="display:none;">
+    <input id="name" placeholder="Tên hoa" />
+    <input id="image" placeholder="Link ảnh hoa" />
+    <select id="color">
+      <option>Đỏ hồng</option>
+      <option>Tím</option>
+      <option>Cam</option>
+    </select>
+    <input id="group" placeholder="Nhóm, ví dụ: BLACKPINK" />
+    <input id="members" placeholder="Thành viên, ví dụ: Hà, SonyXHau" />
+    <button onclick="addFlower()">Thêm hoa</button>
+  </div>
+
+  <div class="section-title" id="sectionTitle">Đỏ hồng</div>
+
+  <div class="grid" id="flowerGrid"></div>
+
+</div>
+
+<script>
+let currentFilter = "all";
+
+let flowers = JSON.parse(localStorage.getItem("flowers")) || [
+  {
+    name: "Ngân Hà Chiếu Nhụy",
+    color: "Đỏ hồng",
+    group: "BLACKPINK",
+    members: "Hà, SonyXHau",
+    image: "https://picsum.photos/400/300?random=1"
+  },
+  {
+    name: "Đình Hoa Đêm Mộng",
+    color: "Đỏ hồng",
+    group: "BLACKPINK",
+    members: "Hà, SonyXHau",
+    image: "https://picsum.photos/400/300?random=2"
+  },
+  {
+    name: "Sắc Xuân Núi Non",
+    color: "Đỏ hồng",
+    group: "BLACKPINK",
+    members: "Hà",
+    image: "https://picsum.photos/400/300?random=3"
+  },
+  {
+    name: "Mai Nguyệt",
+    color: "Cam",
+    group: "BLACKPINK",
+    members: "SonyXHau",
+    image: "https://picsum.photos/400/300?random=4"
+  }
+];
+
+function saveData() {
+  localStorage.setItem("flowers", JSON.stringify(flowers));
+}
+
+function renderFlowers() {
+  const grid = document.getElementById("flowerGrid");
+  const keyword = document.getElementById("searchInput").value.toLowerCase();
+
+  grid.innerHTML = "";
+
+  let result = flowers.filter(item => {
+    const matchColor = currentFilter === "all" || item.color === currentFilter;
+    const matchSearch = item.name.toLowerCase().includes(keyword);
+    return matchColor && matchSearch;
+  });
+
+  document.getElementById("sectionTitle").innerText =
+    currentFilter === "all" ? "Tất cả hoa" : currentFilter;
+
+  result.forEach((item, index) => {
+    grid.innerHTML += `
+      <div class="card">
+        <img src="${item.image}" alt="${item.name}">
+        <div class="card-body">
+          <h3>${item.name}</h3>
+          <span class="tag">● ${item.color}</span>
+          <span class="tag group">🏅 ${item.group}</span>
+          <br>
+          ${item.members.split(",").map(m => 
+            `<span class="tag member">👤 ${m.trim()}</span>`
+          ).join("")}
+          <br><br>
+          <button onclick="deleteFlower(${index})">Xóa</button>
+        </div>
+      </div>
+    `;
+  });
+}
+
+function filterFlower(color) {
+  currentFilter = color;
+  renderFlowers();
+}
+
+function toggleForm() {
+  const form = document.getElementById("formBox");
+  form.style.display = form.style.display === "none" ? "block" : "none";
+}
+
+function addFlower() {
+  const flower = {
+    name: document.getElementById("name").value,
+    image: document.getElementById("image").value,
+    color: document.getElementById("color").value,
+    group: document.getElementById("group").value,
+    members: document.getElementById("members").value
+  };
+
+  if (!flower.name || !flower.image) {
+    alert("Vui lòng nhập tên hoa và link ảnh");
+    return;
+  }
+
+  flowers.push(flower);
+  saveData();
+  renderFlowers();
+
+  document.getElementById("name").value = "";
+  document.getElementById("image").value = "";
+  document.getElementById("group").value = "";
+  document.getElementById("members").value = "";
+}
+
+function deleteFlower(index) {
+  if (confirm("Bạn muốn xóa hoa này?")) {
+    flowers.splice(index, 1);
+    saveData();
+    renderFlowers();
+  }
+}
+
+renderFlowers();
+</script>
+
+</body>
+</html>
