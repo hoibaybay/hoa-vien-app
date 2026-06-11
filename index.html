@@ -3,330 +3,3032 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Hoa Viên</title>
-
+<title>Hoa Viên Lovelygar</title>
 <style>
-* {
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-body {
-  margin: 0;
-  background: #f5fbf6;
-  color: #173b28;
-}
-
-.header {
-  background: #123f25;
-  color: white;
-  padding: 18px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 28px;
-}
-
-.status {
-  background: #1d5a35;
-  padding: 8px 14px;
-  border-radius: 20px;
-}
-
-.container {
-  padding: 18px;
-}
-
-.tabs,
-.filters {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 18px;
-}
-
-button {
-  border: 2px solid #d7eadc;
-  background: white;
-  color: #6b9377;
-  padding: 12px 20px;
-  border-radius: 25px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button.active {
-  background: #123f25;
-  color: white;
-  border-color: #123f25;
-}
-
-.search {
-  width: 100%;
-  padding: 16px;
-  border-radius: 12px;
-  border: 2px solid #d7eadc;
-  font-size: 18px;
-  margin-bottom: 22px;
-}
-
-.section-title {
-  color: #e22891;
-  font-size: 26px;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-}
-
-.card {
-  background: white;
-  border: 2px solid #d7eadc;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-}
-
-.card img {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-}
-
-.card-body {
-  padding: 14px;
-}
-
-.card h3 {
-  margin: 0 0 10px;
-  color: #e22891;
-  font-size: 22px;
-}
-
-.tag {
-  display: inline-block;
-  background: #ffe5f3;
-  color: #d82789;
-  padding: 6px 12px;
-  border-radius: 15px;
-  font-weight: bold;
-  margin: 4px 4px 4px 0;
-  font-size: 14px;
-}
-
-.member {
-  background: #dff3ff;
-  color: #1675a1;
-}
-
-.group {
-  background: #eee7ff;
-  color: #6e42c1;
-}
-
-.form {
-  background: white;
-  border: 2px solid #d7eadc;
-  padding: 15px;
-  border-radius: 16px;
-  margin-bottom: 20px;
-}
-
-.form input,
-.form select {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 10px;
-  border: 1px solid #cde2d2;
-  border-radius: 10px;
-}
-
-.form button {
-  width: 100%;
-  background: #e22891;
-  color: white;
-  border: none;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
-  .card img {
-    height: 140px;
-  }
-
-  .card h3 {
-    font-size: 17px;
-  }
+*{box-sizing:border-box;font-family:Arial,sans-serif}
+body{margin:0;background:#f6fbf7;color:#173b28}
+.header{position:sticky;top:0;z-index:5;background:#123f25;color:#fff;padding:16px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 8px #0002}
+.header h1{margin:0;font-size:26px}
+.status{background:#1d5a35;padding:8px 14px;border-radius:24px;font-weight:bold}
+.container{padding:16px;max-width:1200px;margin:auto}
+.tabs,.filters{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+button{border:2px solid #d7eadc;background:white;color:#4f7d5e;padding:10px 16px;border-radius:22px;font-weight:700;cursor:pointer}
+button.active{background:#123f25;color:white;border-color:#123f25}
+.search{width:100%;padding:15px;border-radius:12px;border:2px solid #d7eadc;font-size:18px;margin:8px 0 16px}
+.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0}
+.sum-card{background:#fff;border:1px solid #d7eadc;border-radius:14px;padding:12px;text-align:center}
+.sum-card b{font-size:22px;color:#e22891}
+.section-title{color:#e22891;font-size:24px;font-weight:800;margin:14px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.card{background:#fff;border:2px solid #d7eadc;border-radius:18px;overflow:hidden;box-shadow:0 3px 8px #0000000d}
+.thumb{height:130px;background:linear-gradient(135deg,#dff7ff,#ffe2f2);display:flex;align-items:center;justify-content:center;font-size:52px}
+.card-body{padding:13px}
+.card h3{margin:0 0 8px;color:#e22891;font-size:19px;line-height:1.25}
+.tag{display:inline-block;background:#ffe5f3;color:#d82789;padding:5px 10px;border-radius:14px;font-weight:700;margin:3px 3px 3px 0;font-size:13px}
+.member{background:#dff3ff;color:#1675a1}
+.group{background:#eee7ff;color:#6e42c1}
+.owner-box{margin-top:8px;min-height:34px}
+.add-row{display:flex;gap:6px;margin-top:10px}
+.add-row input{flex:1;padding:9px;border:1px solid #cde2d2;border-radius:10px}
+.add-row button{padding:8px 10px;border-radius:10px;background:#e22891;color:#fff;border:none}
+.tools{background:#fff;border:1px solid #d7eadc;border-radius:14px;padding:12px;margin-bottom:14px}
+.tools button{margin:4px}
+.small{font-size:13px;color:#63816c}
+@media(max-width:700px){
+  .summary{grid-template-columns:repeat(2,1fr)}
+  .grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .thumb{height:105px;font-size:42px}
+  .card h3{font-size:16px}
+  button{padding:9px 12px}
 }
 </style>
 </head>
-
 <body>
-
 <div class="header">
   <h1>🌺 Hoa Viên</h1>
-  <div class="status">🟢 Kết nối</div>
+  <div class="status">🟢 Ai cũng có thể thêm tên</div>
 </div>
 
 <div class="container">
+  <div class="tools">
+    <b>Dữ liệu hoa từ file Excel:</b> <span id="totalText"></span>
+    <div class="small">Bấm “+” ở từng hoa để thêm thành viên. Dữ liệu mới sẽ lưu trên thiết bị/trình duyệt hiện tại.</div>
+    <button onclick="exportData()">📤 Xuất dữ liệu JSON</button>
+    <button onclick="resetData()">♻️ Khôi phục dữ liệu gốc</button>
+  </div>
 
   <div class="tabs">
-    <button class="active">🌸 Hoa</button>
-    <button>✅ Đánh dấu</button>
-    <button>👥 Thành viên</button>
-    <button onclick="toggleForm()">⚙️ Quản lý</button>
+    <button class="active" onclick="setTab('all',this)">🌸 Hoa</button>
+    <button onclick="setTab('marked',this)">✅ Đánh dấu</button>
   </div>
 
   <div class="filters">
-    <button class="active" onclick="filterFlower('all')">Tất cả</button>
-    <button onclick="filterFlower('Tím')">🟣 Tím</button>
-    <button onclick="filterFlower('Cam')">🟠 Cam</button>
-    <button onclick="filterFlower('Đỏ hồng')">🔴 Đỏ hồng</button>
+    <button class="active" onclick="filterFlower('all',this)">Tất cả</button>
+    <button onclick="filterFlower('Hoa Lv 40-60',this)">Lv 40-60</button>
+    <button onclick="filterFlower('Hoa phẩm xanh dương',this)">🔵 Xanh dương</button>
+    <button onclick="filterFlower('Hoa phẩm Tím',this)">🟣 Tím</button>
+    <button onclick="filterFlower('Hoa phẩm Cam',this)">🟠 Cam</button>
+    <button onclick="filterFlower('Hoa phẩm Hồng',this)">🌸 Hồng</button>
   </div>
 
-  <input class="search" id="searchInput" placeholder="🔍 Tìm tên hoa..." oninput="renderFlowers()" />
+  <input class="search" id="searchInput" placeholder="🔍 Tìm tên hoa hoặc thành viên..." oninput="renderFlowers()" />
 
-  <div class="form" id="formBox" style="display:none;">
-    <input id="name" placeholder="Tên hoa" />
-    <input id="image" placeholder="Link ảnh hoa" />
-    <select id="color">
-      <option>Đỏ hồng</option>
-      <option>Tím</option>
-      <option>Cam</option>
-    </select>
-    <input id="group" placeholder="Nhóm, ví dụ: BLACKPINK" />
-    <input id="members" placeholder="Thành viên, ví dụ: Hà, SonyXHau" />
-    <button onclick="addFlower()">Thêm hoa</button>
-  </div>
-
-  <div class="section-title" id="sectionTitle">Đỏ hồng</div>
-
+  <div class="summary" id="summary"></div>
+  <div class="section-title" id="sectionTitle">Tất cả hoa</div>
   <div class="grid" id="flowerGrid"></div>
-
 </div>
 
 <script>
-let currentFilter = "all";
-
-let flowers = JSON.parse(localStorage.getItem("flowers")) || [
+const DEFAULT_FLOWERS = [
   {
-    name: "Ngân Hà Chiếu Nhụy",
-    color: "Đỏ hồng",
-    group: "BLACKPINK",
-    members: "Hà, SonyXHau",
-    image: "https://picsum.photos/400/300?random=1"
+    "name": "Cát tường xanh",
+    "level": 40,
+    "color": "Khác",
+    "category": "Hoa Lv 40-60",
+    "owners": [],
+    "id": 1
   },
   {
-    name: "Đình Hoa Đêm Mộng",
-    color: "Đỏ hồng",
-    group: "BLACKPINK",
-    members: "Hà, SonyXHau",
-    image: "https://picsum.photos/400/300?random=2"
+    "name": "Tử đinh hương tím",
+    "level": 42,
+    "color": "Khác",
+    "category": "Hoa Lv 40-60",
+    "owners": [],
+    "id": 2
   },
   {
-    name: "Sắc Xuân Núi Non",
-    color: "Đỏ hồng",
-    group: "BLACKPINK",
-    members: "Hà",
-    image: "https://picsum.photos/400/300?random=3"
+    "name": "Cát tường hồng",
+    "level": 43,
+    "color": "Khác",
+    "category": "Hoa Lv 40-60",
+    "owners": [],
+    "id": 3
   },
   {
-    name: "Mai Nguyệt",
-    color: "Cam",
-    group: "BLACKPINK",
-    members: "SonyXHau",
-    image: "https://picsum.photos/400/300?random=4"
+    "name": "Tử đinh hương vàng",
+    "level": 44,
+    "color": "Khác",
+    "category": "Hoa Lv 40-60",
+    "owners": [],
+    "id": 4
+  },
+  {
+    "name": "Cát tường champagne",
+    "level": 45,
+    "color": "Khác",
+    "category": "Hoa Lv 40-60",
+    "owners": [],
+    "id": 5
+  },
+  {
+    "name": "Hoa giấy tím",
+    "level": 46,
+    "color": "Khác",
+    "category": "Hoa Lv 40-60",
+    "owners": [],
+    "id": 6
+  },
+  {
+    "name": "Lưu ly",
+    "level": 47,
+    "color": "Khác",
+    "category": "Hoa Lv 40-60",
+    "owners": [],
+    "id": 7
+  },
+  {
+    "name": "Hoa giấy vàng",
+    "level": 48,
+    "color": "Khác",
+    "category": "Hoa Lv 40-60",
+    "owners": [],
+    "id": 8
+  },
+  {
+    "name": "Nguyệt quế trắng",
+    "level": 49,
+    "color": "Khác",
+    "category": "Hoa Lv 40-60",
+    "owners": [],
+    "id": 9
+  },
+  {
+    "name": "Hoa giấy hồng",
+    "level": 50,
+    "color": "Khác",
+    "category": "Hoa Lv 40-60",
+    "owners": [],
+    "id": 10
+  },
+  {
+    "name": "Rosa rubus đỏ",
+    "level": 51,
+    "color": "Khác",
+    "category": "Hoa Lv 40-60",
+    "owners": [],
+    "id": 11
+  },
+  {
+    "name": "Hoa thiên nga",
+    "level": 52,
+    "color": "Khác",
+    "category": "Hoa Lv 40-60",
+    "owners": [],
+    "id": 12
+  },
+  {
+    "name": "Rosa rubus hồng",
+    "level": 53,
+    "color": "Khác",
+    "category": "Hoa Lv 40-60",
+    "owners": [],
+    "id": 13
+  },
+  {
+    "name": "Thanh anh tím",
+    "level": 54,
+    "color": "Khác",
+    "category": "Hoa Lv 40-60",
+    "owners": [],
+    "id": 14
+  },
+  {
+    "name": "Rosa rubus trắng",
+    "level": 55,
+    "color": "Khác",
+    "category": "Hoa Lv 40-60",
+    "owners": [],
+    "id": 15
+  },
+  {
+    "name": "Huệ trắng",
+    "level": 56,
+    "color": "Khác",
+    "category": "Hoa Lv 40-60",
+    "owners": [],
+    "id": 16
+  },
+  {
+    "name": "Cải ô rô tím",
+    "level": 57,
+    "color": "Khác",
+    "category": "Hoa Lv 40-60",
+    "owners": [],
+    "id": 17
+  },
+  {
+    "name": "Huệ tím",
+    "level": 58,
+    "color": "Khác",
+    "category": "Hoa Lv 40-60",
+    "owners": [],
+    "id": 18
+  },
+  {
+    "name": "Cúc chuồn chocolate",
+    "level": 59,
+    "color": "Khác",
+    "category": "Hoa Lv 40-60",
+    "owners": [],
+    "id": 19
+  },
+  {
+    "name": "Huệ vàng",
+    "level": 60,
+    "color": "Khác",
+    "category": "Hoa Lv 40-60",
+    "owners": [],
+    "id": 20
+  },
+  {
+    "name": "Cỏ thuỷ tiên cam",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "Samsam"
+    ],
+    "id": 21
+  },
+  {
+    "name": "Cỏ thuỷ tiên vàng",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [],
+    "id": 22
+  },
+  {
+    "name": "Cỏ thuỷ tiên hồng non",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "Samsam",
+      "huynh anh"
+    ],
+    "id": 23
+  },
+  {
+    "name": "Thục quỳ vàng",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "HuangYing"
+    ],
+    "id": 24
+  },
+  {
+    "name": "Thục quỷ đỏ",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "ALing",
+      "Coca",
+      "Thái Hà nga",
+      "HuangYing"
+    ],
+    "id": 25
+  },
+  {
+    "name": "Thục quỳ hồng",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "ALing",
+      "Gia Kỳ",
+      "Thái Hà Nga",
+      "Samsam",
+      "su2003",
+      "Chi mai",
+      "coca",
+      "Xiaomei"
+    ],
+    "id": 26
+  },
+  {
+    "name": "Tử linh lan đỏ",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "Lyn",
+      "Coca"
+    ],
+    "id": 27
+  },
+  {
+    "name": "Tử linh lan hồng",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [],
+    "id": 28
+  },
+  {
+    "name": "Tử linh lan tím",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "Coca"
+    ],
+    "id": 29
+  },
+  {
+    "name": "Baby hồng",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "Mẫn",
+      "su2003",
+      "Mơ Mơ",
+      "HuangYing",
+      "CáHeotíti",
+      "Samsam"
+    ],
+    "id": 30
+  },
+  {
+    "name": "Baby Lam",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "Mật Ngọt",
+      "Mẫn",
+      "Chi mai",
+      "Lynn",
+      "Xiaomei",
+      "huynh anh"
+    ],
+    "id": 31
+  },
+  {
+    "name": "Baby trắng",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "HuangYing",
+      "ALing",
+      "huynh anh"
+    ],
+    "id": 32
+  },
+  {
+    "name": "Hải đường đỏ",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "su²⁰⁰³"
+    ],
+    "id": 33
+  },
+  {
+    "name": "Hải đường vàng",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "Samsam",
+      "Tiểu Liên"
+    ],
+    "id": 34
+  },
+  {
+    "name": "Ghim cài lửa",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "Lyn",
+      "su2003"
+    ],
+    "id": 35
+  },
+  {
+    "name": "Ghim cài vàng mậ",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "Lyn",
+      "Tiểu Liên",
+      "CáHeotíti"
+    ],
+    "id": 36
+  },
+  {
+    "name": "Trúc đào đỏ tím",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "Samsam",
+      "Tiểu liên"
+    ],
+    "id": 37
+  },
+  {
+    "name": "Trúc đào hồng nhạt",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "Phi yến",
+      "Lyn"
+    ],
+    "id": 38
+  },
+  {
+    "name": "Đỗ quyên đỏ",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "CáHeotíti"
+    ],
+    "id": 39
+  },
+  {
+    "name": "Đỗ quyên hồng",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "su2003"
+    ],
+    "id": 40
+  },
+  {
+    "name": "Đỗ quyên vàng",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "HuangYing",
+      "Coca",
+      "Tiểu Liên"
+    ],
+    "id": 41
+  },
+  {
+    "name": "Mạch môn tím",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "Mật ngọt",
+      "Giai Ý",
+      "huynh anh"
+    ],
+    "id": 42
+  },
+  {
+    "name": "Thuý châu tím",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "Lyn"
+    ],
+    "id": 43
+  },
+  {
+    "name": "Thuý châu trắng",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [],
+    "id": 44
+  },
+  {
+    "name": "Diên vĩ thung lũng hồng",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "Coca",
+      "Cường Plus",
+      "MaPu",
+      "Mật ngọt",
+      "Samsam",
+      "CáHeotíti",
+      "Chi mai",
+      "Aling",
+      "huynh anh"
+    ],
+    "id": 45
+  },
+  {
+    "name": "Diên vĩ thung lũng trắng",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "ALing",
+      "Samsam"
+    ],
+    "id": 46
+  },
+  {
+    "name": "Diên vĩ thung lũng lam",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "CáHeotíti",
+      "Gia Kỳ",
+      "Samsam",
+      "Coca"
+    ],
+    "id": 47
+  },
+  {
+    "name": "Oải Hương an giấc",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "Gia Kỳ",
+      "su2003",
+      "Chi mai"
+    ],
+    "id": 48
+  },
+  {
+    "name": "Lồng đèn đỏ",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "ALing"
+    ],
+    "id": 49
+  },
+  {
+    "name": "Hồng jacqueline trắng",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [],
+    "id": 50
+  },
+  {
+    "name": "Vạn tuế lá xanh",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "Samsam",
+      "Chi mai",
+      "Xiaomei"
+    ],
+    "id": 51
+  },
+  {
+    "name": "Huyên Cam",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "Lyn"
+    ],
+    "id": 52
+  },
+  {
+    "name": "ông lão hồng",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "Nana",
+      "Bơ Bếu",
+      "Nhím",
+      "Phi yến",
+      "chi mai"
+    ],
+    "id": 53
+  },
+  {
+    "name": "Thanh cúc lam",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "Gia Kỳ",
+      "Mật Ngọt",
+      "Samsam",
+      "Phi yến",
+      "su2003"
+    ],
+    "id": 54
+  },
+  {
+    "name": "Sao nhái trắng",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "NaNa",
+      "Gia Kỳ",
+      "Mật ngọt",
+      "CáHeotíti"
+    ],
+    "id": 55
+  },
+  {
+    "name": "Huệ Hosta tím",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "CáHeotíti",
+      "Gia Kỳ"
+    ],
+    "id": 56
+  },
+  {
+    "name": "Huệ Hosta Lam",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "Gia Kỳ"
+    ],
+    "id": 57
+  },
+  {
+    "name": "Báo xuân hồng",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "ALing",
+      "Samsam",
+      "Coca"
+    ],
+    "id": 58
+  },
+  {
+    "name": "Huyên vàng trắng",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "ALing",
+      "Gia Kỳ"
+    ],
+    "id": 59
+  },
+  {
+    "name": "Anh thảo hồng nhạt",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "ALing",
+      "Samsam"
+    ],
+    "id": 60
+  },
+  {
+    "name": "Anh thảo tím nhạt",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "ALing"
+    ],
+    "id": 61
+  },
+  {
+    "name": "Anh thảo xanh nhạt",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "Samsam"
+    ],
+    "id": 62
+  },
+  {
+    "name": "Huyên cam tím trắng",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [],
+    "id": 63
+  },
+  {
+    "name": "Hồng Jacqueline lam",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [],
+    "id": 64
+  },
+  {
+    "name": "Hoa thỏ li xanh biếc",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "ALing",
+      "huynh anh",
+      "Coca",
+      "Samsam"
+    ],
+    "id": 65
+  },
+  {
+    "name": "Nguyệt quý hồng",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "ALing",
+      "Gia Kỳ",
+      "Chi mai",
+      "su²⁰⁰³",
+      "Coca",
+      "huynh anh"
+    ],
+    "id": 66
+  },
+  {
+    "name": "Hồng jacqueline phấn",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [],
+    "id": 67
+  },
+  {
+    "name": "Mẫu đơn hà bao hồng",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "Samsam"
+    ],
+    "id": 68
+  },
+  {
+    "name": "Mẫu đơn hà bao tím",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "Mật ngọt",
+      "ALing",
+      "su²⁰⁰³",
+      "CáHeotíti",
+      "Samsam",
+      "huynh anh"
+    ],
+    "id": 69
+  },
+  {
+    "name": "Lan hoàng thảo tím dịu",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "ALing",
+      "Samsam",
+      "Coca"
+    ],
+    "id": 70
+  },
+  {
+    "name": "Hoa thỏ li trắng sáng",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "ALing",
+      "CáHeotíti",
+      "Coca"
+    ],
+    "id": 71
+  },
+  {
+    "name": "Lê bạch ngọc",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [
+      "ALing",
+      "huynh anh"
+    ],
+    "id": 72
+  },
+  {
+    "name": "Lan hoàng thảo hồng thăm",
+    "level": null,
+    "color": "Xanh dương",
+    "category": "Hoa phẩm xanh dương",
+    "owners": [],
+    "id": 73
+  },
+  {
+    "name": "Anh túc cam",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "ALing",
+      "Gia Kỳ",
+      "Lyn"
+    ],
+    "id": 74
+  },
+  {
+    "name": "Anh túc đỏ",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "CáHeotiti",
+      "Gia Kỳ",
+      "Lyn",
+      "Samsam",
+      "huynh anh"
+    ],
+    "id": 75
+  },
+  {
+    "name": "Anh Túc tím",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "CáHeotiti",
+      "Gia Kỳ",
+      "Lyn",
+      "ALing"
+    ],
+    "id": 76
+  },
+  {
+    "name": "Poppy himalaya vàng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Bơ Bếu",
+      "Bạch tâm"
+    ],
+    "id": 77
+  },
+  {
+    "name": "Poppy Himalaya Tím",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "ALing"
+    ],
+    "id": 78
+  },
+  {
+    "name": "Poppy Himalaya Xanh",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Cáheotíti",
+      "Coca",
+      "Lyn",
+      "bạch tâm",
+      "Lynn"
+    ],
+    "id": 79
+  },
+  {
+    "name": "San hô tím",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Cường Plus",
+      "Thái Hà Nga",
+      "Samsam"
+    ],
+    "id": 80
+  },
+  {
+    "name": "San hô cam",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "NaNa"
+    ],
+    "id": 81
+  },
+  {
+    "name": "San hô xanh",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "ALing",
+      "Samsam",
+      "Coca"
+    ],
+    "id": 82
+  },
+  {
+    "name": "Hải quỳ đỏ",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Bơ Bếu",
+      "Nhím",
+      "Samsam",
+      "Coca"
+    ],
+    "id": 83
+  },
+  {
+    "name": "Hải quỳ trắng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Bạch tâm"
+    ],
+    "id": 84
+  },
+  {
+    "name": "Hải quỳ cam",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "NaNa",
+      "Mật ngọt"
+    ],
+    "id": 85
+  },
+  {
+    "name": "Lay ơn vàng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Coca"
+    ],
+    "id": 86
+  },
+  {
+    "name": "Lay ơn trắng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "HuangYing",
+      "Lyn",
+      "Lynn",
+      "Xiaomei",
+      "huynh anh"
+    ],
+    "id": 87
+  },
+  {
+    "name": "Lay ơn tím",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "MaPu",
+      "Nhím",
+      "Lyn"
+    ],
+    "id": 88
+  },
+  {
+    "name": "Tường vi hồng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "MaPu",
+      "Xiaomei",
+      "Lynn"
+    ],
+    "id": 89
+  },
+  {
+    "name": "Tường vi xanh",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "ALing",
+      "Samsam"
+    ],
+    "id": 90
+  },
+  {
+    "name": "Tường vi vàng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "HuangYing",
+      "Coca",
+      "Lyn"
+    ],
+    "id": 91
+  },
+  {
+    "name": "Lan vũ nữ vàng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Gia Kỳ",
+      "mật Ngọt",
+      "Chi mai",
+      "Nhím",
+      "bơ bếu",
+      "huynh anh"
+    ],
+    "id": 92
+  },
+  {
+    "name": "Lan vũ nữ đỏ",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Bơ Bếu",
+      "Lyn",
+      "Samsam"
+    ],
+    "id": 93
+  },
+  {
+    "name": "Lan vu nữ cam",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "ALing"
+    ],
+    "id": 94
+  },
+  {
+    "name": "Hồng lenten hồng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Coca",
+      "Samsam"
+    ],
+    "id": 95
+  },
+  {
+    "name": "Hồng lenten đỏ",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "CáHeotíti",
+      "Samsam",
+      "su2003"
+    ],
+    "id": 96
+  },
+  {
+    "name": "Hồng lenten vàng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "HuangYing"
+    ],
+    "id": 97
+  },
+  {
+    "name": "Anh thảo xanh",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "CáHeotiti",
+      "MaPu",
+      "Mật ngọt",
+      "Bơ Bếu",
+      "Gia Kỳ",
+      "Nhím",
+      "Samsam",
+      "hanghyt",
+      "Mơ Mơ"
+    ],
+    "id": 98
+  },
+  {
+    "name": "Hoa anh thảo vàng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Cường Plus",
+      "Mẫn",
+      "NaNa"
+    ],
+    "id": 99
+  },
+  {
+    "name": "Anh thảo hồng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "CáHeotiti",
+      "Bơ Bế",
+      "Nana",
+      "Samsam",
+      "Nhím",
+      "Mật ngọt",
+      "hanghyt",
+      "HuangYing"
+    ],
+    "id": 100
+  },
+  {
+    "name": "Phi yến hồng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Coca"
+    ],
+    "id": 101
+  },
+  {
+    "name": "Phi yến tím",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Bơ Bếu",
+      "Lyn",
+      "HuangYing"
+    ],
+    "id": 102
+  },
+  {
+    "name": "Phi yến lam",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "ALing",
+      "Lyn",
+      "Samsam"
+    ],
+    "id": 103
+  },
+  {
+    "name": "Hoa Hải quỳ hồng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "MaPu",
+      "Phi yến"
+    ],
+    "id": 104
+  },
+  {
+    "name": "Hoa Hải quỳ trắng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Nhím",
+      "Lyn",
+      "Phi yến",
+      "Chi mai"
+    ],
+    "id": 105
+  },
+  {
+    "name": "Hoa Hải quỳ tím",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "NaNa",
+      "Phi yến",
+      "bạch tâm"
+    ],
+    "id": 106
+  },
+  {
+    "name": "Diên vĩ đức hồng tím",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "MinCA4",
+      "ALing"
+    ],
+    "id": 107
+  },
+  {
+    "name": "Diên vĩ đức trắng vàng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Minca4",
+      "Su2003",
+      "Mật ngọt",
+      "MaPu",
+      "HuangYing",
+      "Coca"
+    ],
+    "id": 108
+  },
+  {
+    "name": "Diên vĩ Đức Kem đỏ",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "ALing",
+      "Lyn",
+      "Samsam"
+    ],
+    "id": 109
+  },
+  {
+    "name": "Lộ vi vàng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Bơ Bếu",
+      "Thye",
+      "Chi mai"
+    ],
+    "id": 110
+  },
+  {
+    "name": "Lộ vi trắng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Gia Kỳ",
+      "Tiểu Liên",
+      "huynh anh"
+    ],
+    "id": 111
+  },
+  {
+    "name": "Lộ vi hồng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Minca4",
+      "Coca"
+    ],
+    "id": 112
+  },
+  {
+    "name": "Ngót nghẻo cam thắm",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Bơ Bếu",
+      "Lyn"
+    ],
+    "id": 113
+  },
+  {
+    "name": "Ngót nghẻo đỏ lửa",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "MaPu",
+      "Lyn",
+      "Coca"
+    ],
+    "id": 114
+  },
+  {
+    "name": "Ngót nghẻo hồng phấn",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "CáHeotiti",
+      "MaPu",
+      "Lyn",
+      "Mẫn"
+    ],
+    "id": 115
+  },
+  {
+    "name": "Loa kèn đỏ",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Coca",
+      "MinCA4"
+    ],
+    "id": 116
+  },
+  {
+    "name": "Loa kèn cam",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "MaPu",
+      "Lyn",
+      "MinCA4",
+      "Coca"
+    ],
+    "id": 117
+  },
+  {
+    "name": "Loa kèn hồng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Nhím",
+      "ALing"
+    ],
+    "id": 118
+  },
+  {
+    "name": "Rosa banksiae hồng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "ALing"
+    ],
+    "id": 119
+  },
+  {
+    "name": "Rosa Banksiae trắng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "CáHeotiti",
+      "ALing",
+      "MinCA4",
+      "Coca",
+      "Lynn"
+    ],
+    "id": 120
+  },
+  {
+    "name": "Rosa banksiae vàng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "ALing"
+    ],
+    "id": 121
+  },
+  {
+    "name": "Gừng sen hồng đào",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Samsam"
+    ],
+    "id": 122
+  },
+  {
+    "name": "Gừng sen bạch ngọc",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn"
+    ],
+    "id": 123
+  },
+  {
+    "name": "Đăng tiêu trắng tím",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn"
+    ],
+    "id": 124
+  },
+  {
+    "name": "Đăng tiêu đỏ chu",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Sam sam"
+    ],
+    "id": 125
+  },
+  {
+    "name": "Cúc indo cam",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "MaPu",
+      "ALing",
+      "Lyn"
+    ],
+    "id": 126
+  },
+  {
+    "name": "Cúc indo hồng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Gia Kỳ",
+      "Samsam"
+    ],
+    "id": 127
+  },
+  {
+    "name": "Tuyết mai Hồng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Samsam"
+    ],
+    "id": 128
+  },
+  {
+    "name": "Tuyết mai trắng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Aling"
+    ],
+    "id": 129
+  },
+  {
+    "name": "Hoa lồng đèn cam",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Coca",
+      "ALing"
+    ],
+    "id": 130
+  },
+  {
+    "name": "Lồng đèn tím",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Samsam"
+    ],
+    "id": 131
+  },
+  {
+    "name": "Sao nhái hồng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Coca"
+    ],
+    "id": 132
+  },
+  {
+    "name": "Sao nhái tím",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Gia Kỳ",
+      "Lyn",
+      "Coca",
+      "Samsam",
+      "Thye"
+    ],
+    "id": 133
+  },
+  {
+    "name": "Cúc thược dược đen",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "NaNa",
+      "Gia Kỳ",
+      "Tiểu Liên"
+    ],
+    "id": 134
+  },
+  {
+    "name": "Cúc thược dược cam",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Xiaomei",
+      "Gia Kỳ"
+    ],
+    "id": 135
+  },
+  {
+    "name": "Mạch môn hồng phấn",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Mẫn"
+    ],
+    "id": 136
+  },
+  {
+    "name": "Mạch môn sương trắng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Nhím",
+      "Coca"
+    ],
+    "id": 137
+  },
+  {
+    "name": "Mộc Lan Vàng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Gia Kỳ",
+      "Coca",
+      "Aling"
+    ],
+    "id": 138
+  },
+  {
+    "name": "Mộc lan tím",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Gia Kỳ",
+      "Aling",
+      "Mơ Mơ"
+    ],
+    "id": 139
+  },
+  {
+    "name": "Mộc hương cam",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Mật Ngọt",
+      "bạch tâm"
+    ],
+    "id": 140
+  },
+  {
+    "name": "Mộc hương vàng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [],
+    "id": 141
+  },
+  {
+    "name": "Mộc hương trắng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Chi mai"
+    ],
+    "id": 142
+  },
+  {
+    "name": "Cây sống đời đỏ",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "HuangYing",
+      "CáHeotiti",
+      "hanghyt"
+    ],
+    "id": 143
+  },
+  {
+    "name": "Cây sống đời vàng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Mật Ngọt"
+    ],
+    "id": 144
+  },
+  {
+    "name": "Cây sống đời hồng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Gia Kỳ",
+      "Lyn",
+      "Coca"
+    ],
+    "id": 145
+  },
+  {
+    "name": "Địa lan trắng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "ALing",
+      "Gia Kỳ",
+      "CáHeotiti",
+      "Chimai",
+      "Coca",
+      "HuangYing"
+    ],
+    "id": 146
+  },
+  {
+    "name": "Địa lan xanh",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "ALing"
+    ],
+    "id": 147
+  },
+  {
+    "name": "Tử đằng hồng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Samsam"
+    ],
+    "id": 148
+  },
+  {
+    "name": "Tử đằng lam",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn"
+    ],
+    "id": 149
+  },
+  {
+    "name": "Thược dược đỏ",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Nhím",
+      "Coca",
+      "MaPu",
+      "Phi yến",
+      "Mẫn",
+      "Mật ngọt"
+    ],
+    "id": 150
+  },
+  {
+    "name": "Thược dược trắng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "CáHeotiti",
+      "MaPu"
+    ],
+    "id": 151
+  },
+  {
+    "name": "Mao lương kem vàng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Gia Kỳ",
+      "Lyn"
+    ],
+    "id": 152
+  },
+  {
+    "name": "Mao lương cam hoàng hôn",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "su2003"
+    ],
+    "id": 153
+  },
+  {
+    "name": "Mao Lương hoa đào mật",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [],
+    "id": 154
+  },
+  {
+    "name": "Ông lão tím",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "ALing"
+    ],
+    "id": 155
+  },
+  {
+    "name": "Cây lá gan tím",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn"
+    ],
+    "id": 156
+  },
+  {
+    "name": "Hành tím",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Nana",
+      "Samsam",
+      "Bạch Tâm"
+    ],
+    "id": 157
+  },
+  {
+    "name": "trà mai hồng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn"
+    ],
+    "id": 158
+  },
+  {
+    "name": "Hồng môn phấn",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Bơ Bếu",
+      "Lyn",
+      "ALing",
+      "bạch tâm"
+    ],
+    "id": 159
+  },
+  {
+    "name": "Hải đường hồng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "ALing"
+    ],
+    "id": 160
+  },
+  {
+    "name": "Hồng Champagne",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "CáHeotiti",
+      "MaPu",
+      "Gia Kỳ",
+      "Mật Ngọt",
+      "Thye",
+      "hanghyt",
+      "Phi yến",
+      "Coca",
+      "Mơ Mơ"
+    ],
+    "id": 161
+  },
+  {
+    "name": "Lung linh bóng trăng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn"
+    ],
+    "id": 162
+  },
+  {
+    "name": "Ngôi sao Bethlehem",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "CáHeotiti",
+      "Mapu",
+      "Gia Kỳ",
+      "ALing",
+      "Nana",
+      "Samsam"
+    ],
+    "id": 163
+  },
+  {
+    "name": "Lạp Mai đỏ",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "CáHeotiti",
+      "MaPu",
+      "Bơ Bếu",
+      "Nana",
+      "Mật Ngọt",
+      "Nhím Samsam"
+    ],
+    "id": 164
+  },
+  {
+    "name": "Lan phượng vĩ đỏ",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Mật Ngọt",
+      "su2003",
+      "huynh anh"
+    ],
+    "id": 165
+  },
+  {
+    "name": "Nhài nhật",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "NaNa",
+      "Chi mai",
+      "Gia Kỳ",
+      "Lyn",
+      "Thye"
+    ],
+    "id": 166
+  },
+  {
+    "name": "Mạn Đà la",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Bơ Bếu",
+      "Gia Kỳ",
+      "Xiaomei"
+    ],
+    "id": 167
+  },
+  {
+    "name": "Vạn tuế lá lam",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Mật ngọt",
+      "ALing",
+      "Chi mai",
+      "Mẫn",
+      "Thye",
+      "NaNa"
+    ],
+    "id": 168
+  },
+  {
+    "name": "Nhuỵ linh ánh sao",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "ALing",
+      "Samsam"
+    ],
+    "id": 169
+  },
+  {
+    "name": "Lệ đường thanh nhã",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn"
+    ],
+    "id": 170
+  },
+  {
+    "name": "Trúc đào xanh",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Thye",
+      "Lyn"
+    ],
+    "id": 171
+  },
+  {
+    "name": "Hoa sứ sáng ngọc",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Phi yến"
+    ],
+    "id": 172
+  },
+  {
+    "name": "Mạn châu xa",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "MaPu",
+      "Bạch Tâm",
+      "CáHeotiti",
+      "Samsam",
+      "Coca",
+      "Thye",
+      "Gia Kỳ",
+      "Aling",
+      "HuangYing"
+    ],
+    "id": 173
+  },
+  {
+    "name": "Đông trùng thông tím",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Sam Sam",
+      "Gia Kỳ"
+    ],
+    "id": 174
+  },
+  {
+    "name": "Tử kinh ngoại tím",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Samsam",
+      "Phi yến",
+      "Mẫn"
+    ],
+    "id": 175
+  },
+  {
+    "name": "Bách hợp lồng đèn",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Phi yến",
+      "Mẫn",
+      "Samsam"
+    ],
+    "id": 176
+  },
+  {
+    "name": "Đông trùng thông vàng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Samsam",
+      "CáHeotíti",
+      "Gia Kỳ",
+      "Coca",
+      "Lynn"
+    ],
+    "id": 177
+  },
+  {
+    "name": "Đông trùng thông hồng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Samsam",
+      "ALing",
+      "HuangYing"
+    ],
+    "id": 178
+  },
+  {
+    "name": "Thuỵ hương vàng nhạt",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Coca"
+    ],
+    "id": 179
+  },
+  {
+    "name": "Thuỵ hương trắng tuyết",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [],
+    "id": 180
+  },
+  {
+    "name": "Thuỵ hương tím khói",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [],
+    "id": 181
+  },
+  {
+    "name": "Lập kim xanh sẫm",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Coca"
+    ],
+    "id": 182
+  },
+  {
+    "name": "Lập kim vàng nhạt",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn"
+    ],
+    "id": 183
+  },
+  {
+    "name": "Lập kim hồng san hô",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn"
+    ],
+    "id": 184
+  },
+  {
+    "name": "Mật rồng hồng phấn",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "ALing",
+      "CáHeotíti",
+      "Samsam"
+    ],
+    "id": 185
+  },
+  {
+    "name": "Mật rồng đỏ tươi",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "ALing",
+      "CáHeotíti",
+      "Coca"
+    ],
+    "id": 186
+  },
+  {
+    "name": "Mật rồng xanh trong",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "ALing",
+      "Gia Kỳ"
+    ],
+    "id": 187
+  },
+  {
+    "name": "Bồ câu tím",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Coca"
+    ],
+    "id": 188
+  },
+  {
+    "name": "Bồ câu xanh",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [],
+    "id": 189
+  },
+  {
+    "name": "Bồ câu đỏ",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "ALing"
+    ],
+    "id": 190
+  },
+  {
+    "name": "Loa kèn peru đỏ",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Samsam",
+      "Gia Kỳ"
+    ],
+    "id": 191
+  },
+  {
+    "name": "Loa kèn peru hồng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [],
+    "id": 192
+  },
+  {
+    "name": "Loa kèn peru xanh",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Gia Kỳ"
+    ],
+    "id": 193
+  },
+  {
+    "name": "Gừng sen ban mai",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Lyn",
+      "Coca"
+    ],
+    "id": 194
+  },
+  {
+    "name": "Đăng tiêu cam vàng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "Coca"
+    ],
+    "id": 195
+  },
+  {
+    "name": "Thược dược hồng",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "ALing",
+      "CáHeotíti",
+      "Coca"
+    ],
+    "id": 196
+  },
+  {
+    "name": "Sen trời đầy sao",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "ALing",
+      "bạch tâm",
+      "Coca"
+    ],
+    "id": 197
+  },
+  {
+    "name": "Hoa huệ mưa thanh nhã",
+    "level": null,
+    "color": "Tím",
+    "category": "Hoa phẩm Tím",
+    "owners": [
+      "ALing",
+      "bạch tâm",
+      "Coca"
+    ],
+    "id": 198
+  },
+  {
+    "name": "Phù dung hồng hộp báu",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Samsam",
+      "Lyn"
+    ],
+    "id": 199
+  },
+  {
+    "name": "Phù dung tím hộp báu",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Lyn"
+    ],
+    "id": 200
+  },
+  {
+    "name": "Phu dung cam hộp báu",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Lyn",
+      "Mẫn"
+    ],
+    "id": 201
+  },
+  {
+    "name": "Cá heo xanh",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Lyn",
+      "Coca"
+    ],
+    "id": 202
+  },
+  {
+    "name": "Cá heo trắng",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Lyn",
+      "Samsam"
+    ],
+    "id": 203
+  },
+  {
+    "name": "Cá heo hồng",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Lyn",
+      "ALing"
+    ],
+    "id": 204
+  },
+  {
+    "name": "Đế Vương Hồng tía",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [],
+    "id": 205
+  },
+  {
+    "name": "Đế vương lam lưu ly",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [],
+    "id": 206
+  },
+  {
+    "name": "Đế Vương xích diễm",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [],
+    "id": 207
+  },
+  {
+    "name": "Mẫu đơn ánh tím",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Lyn",
+      "ALing"
+    ],
+    "id": 208
+  },
+  {
+    "name": "Mẫu đơn ánh xanh",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "ALing",
+      "Lyn"
+    ],
+    "id": 209
+  },
+  {
+    "name": "Mẫu đơn ánh ngọc",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Lyn",
+      "Coca"
+    ],
+    "id": 210
+  },
+  {
+    "name": "Sắc cam mùa xuân",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Lyn",
+      "Coca"
+    ],
+    "id": 211
+  },
+  {
+    "name": "Mưa bụi cô tô",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Mapu",
+      "Lyn"
+    ],
+    "id": 212
+  },
+  {
+    "name": "Tiên nữ rải hoa",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Lyn",
+      "ALing"
+    ],
+    "id": 213
+  },
+  {
+    "name": "Lạp mai hương phi",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Lyn",
+      "Samsam"
+    ],
+    "id": 214
+  },
+  {
+    "name": "Lạp mai lung linh",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "ALing",
+      "Lyn"
+    ],
+    "id": 215
+  },
+  {
+    "name": "Mộc lan Ngọc Ngà",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "CáHeoTiti",
+      "MaPu",
+      "Bơ Bếu",
+      "Nana",
+      "Gia Kỳ",
+      "coca",
+      "Nhím"
+    ],
+    "id": 216
+  },
+  {
+    "name": "Tùng linh chiếu rọi",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [],
+    "id": 217
+  },
+  {
+    "name": "Bóng quế cảnh ngọc",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [],
+    "id": 218
+  },
+  {
+    "name": "Hồng cecil lam",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Thye",
+      "Lyn"
+    ],
+    "id": 219
+  },
+  {
+    "name": "Hồng Cecil phấn",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Lyn",
+      "Aling"
+    ],
+    "id": 220
+  },
+  {
+    "name": "Thuyền tiên sông Ngân",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Lyn"
+    ],
+    "id": 221
+  },
+  {
+    "name": "Hạc gửi ngân hà",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Lyn",
+      "ALing",
+      "huynh anh",
+      "Samsam",
+      "Thái Hà Nga",
+      "Mẫn"
+    ],
+    "id": 222
+  },
+  {
+    "name": "Cháo ngọt sương hoa",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Coca"
+    ],
+    "id": 223
+  },
+  {
+    "name": "Hương lam đêm",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Lyn"
+    ],
+    "id": 224
+  },
+  {
+    "name": "Tử Linh Phúc Lộc",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Lyn"
+    ],
+    "id": 225
+  },
+  {
+    "name": "Trúc ánh sác vàng",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [],
+    "id": 226
+  },
+  {
+    "name": "Chương hoa mộng điệp",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Lyn",
+      "Phi yến"
+    ],
+    "id": 227
+  },
+  {
+    "name": "Thỏ ngọc ôm anh sáng",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Nana",
+      "Samsam",
+      "Lyn"
+    ],
+    "id": 228
+  },
+  {
+    "name": "Hương hoa diên vĩ",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Aling",
+      "Samsam",
+      "Lyn"
+    ],
+    "id": 229
+  },
+  {
+    "name": "Gấu Hoa Hồng",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Lyn",
+      "ALing",
+      "Samsam",
+      "Bơ bếu"
+    ],
+    "id": 230
+  },
+  {
+    "name": "Sách mai điệp ảnh",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "ALing",
+      "Lyn"
+    ],
+    "id": 231
+  },
+  {
+    "name": "Nguyệt quý mây hồng",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "ALing",
+      "Bạch Tâm",
+      "Lyn"
+    ],
+    "id": 232
+  },
+  {
+    "name": "Nguyệt quý mây vàng",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Lyn",
+      "bạch tâm",
+      "Coca"
+    ],
+    "id": 233
+  },
+  {
+    "name": "Nguyệt quý mây cam",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Lyn"
+    ],
+    "id": 234
+  },
+  {
+    "name": "Cừu bông ngọt ngào",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Lyn",
+      "Samsam",
+      "ALing"
+    ],
+    "id": 235
+  },
+  {
+    "name": "Trái tim tìm mật",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "Lyn"
+    ],
+    "id": 236
+  },
+  {
+    "name": "Trái tim đá quý",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "ALing",
+      "HuangYing",
+      "CáHeotíti",
+      "Samsam",
+      "Coca",
+      "Bạch Tâm"
+    ],
+    "id": 237
+  },
+  {
+    "name": "Cúc mẫu đơn tím nho",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "ALing",
+      "Lyn"
+    ],
+    "id": 238
+  },
+  {
+    "name": "Ngọc lan lưu hương",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "ALing",
+      "Lyn"
+    ],
+    "id": 239
+  },
+  {
+    "name": "Diều giấy đón xuân",
+    "level": null,
+    "color": "Cam",
+    "category": "Hoa phẩm Cam",
+    "owners": [
+      "ALing",
+      "Lyn"
+    ],
+    "id": 240
+  },
+  {
+    "name": "Ngân hà chiếu nhuỵ",
+    "level": null,
+    "color": "Đỏ hồng",
+    "category": "Hoa phẩm Hồng",
+    "owners": [
+      "HuangYing",
+      "Bơ Bếu",
+      "Samsam",
+      "MaPu",
+      "Mật ngọt",
+      "Gia Kỳ",
+      "CáHeotiti",
+      "mẫn",
+      "Coca",
+      "Lyn"
+    ],
+    "id": 241
+  },
+  {
+    "name": "Đình mộng hoa đêm",
+    "level": null,
+    "color": "Đỏ hồng",
+    "category": "Hoa phẩm Hồng",
+    "owners": [
+      "Lyn",
+      "su2003"
+    ],
+    "id": 242
+  },
+  {
+    "name": "Mai nguyệt huyền âm",
+    "level": null,
+    "color": "Đỏ hồng",
+    "category": "Hoa phẩm Hồng",
+    "owners": [
+      "Lyn"
+    ],
+    "id": 243
+  },
+  {
+    "name": "Gia Nguyệt Neo thuyền câu cá",
+    "level": null,
+    "color": "Đỏ hồng",
+    "category": "Hoa phẩm Hồng",
+    "owners": [
+      "Lyn"
+    ],
+    "id": 244
+  },
+  {
+    "name": "Thiên cung",
+    "level": null,
+    "color": "Đỏ hồng",
+    "category": "Hoa phẩm Hồng",
+    "owners": [],
+    "id": 245
+  },
+  {
+    "name": "Thanh Loan Bích vũ",
+    "level": null,
+    "color": "Đỏ hồng",
+    "category": "Hoa phẩm Hồng",
+    "owners": [
+      "Lyn"
+    ],
+    "id": 246
+  },
+  {
+    "name": "Chép vàng vượt sóng",
+    "level": null,
+    "color": "Đỏ hồng",
+    "category": "Hoa phẩm Hồng",
+    "owners": [
+      "Lyn"
+    ],
+    "id": 247
+  },
+  {
+    "name": "Có Rồng ắt linh",
+    "level": null,
+    "color": "Đỏ hồng",
+    "category": "Hoa phẩm Hồng",
+    "owners": [
+      "Lyn"
+    ],
+    "id": 248
+  },
+  {
+    "name": "Liễu nguyệt én hot bên đình",
+    "level": null,
+    "color": "Đỏ hồng",
+    "category": "Hoa phẩm Hồng",
+    "owners": [
+      "Mẫn",
+      "Phi Yến",
+      "Samsam"
+    ],
+    "id": 249
+  },
+  {
+    "name": "Trái tim mộng ảo",
+    "level": null,
+    "color": "Đỏ hồng",
+    "category": "Hoa phẩm Hồng",
+    "owners": [
+      "Lyn"
+    ],
+    "id": 250
+  },
+  {
+    "name": "Hạnh nguyệt - nghỉ dưới bóng hoa",
+    "level": null,
+    "color": "Đỏ hồng",
+    "category": "Hoa phẩm Hồng",
+    "owners": [
+      "Bạch Tâm",
+      "ALing",
+      "Coca",
+      "Lyn"
+    ],
+    "id": 251
+  },
+  {
+    "name": "Sắc xuân núi non",
+    "level": null,
+    "color": "Đỏ hồng",
+    "category": "Hoa phẩm Hồng",
+    "owners": [
+      "ALing",
+      "Bạch tâm",
+      "Mẫn",
+      "Lyn"
+    ],
+    "id": 252
   }
 ];
 
-function saveData() {
-  localStorage.setItem("flowers", JSON.stringify(flowers));
+let flowers = JSON.parse(localStorage.getItem("hoa_vien_data_v2") || "null") || structuredClone(DEFAULT_FLOWERS);
+let currentFilter = "all";
+let currentTab = "all";
+
+function saveData(){
+  localStorage.setItem("hoa_vien_data_v2", JSON.stringify(flowers));
 }
 
-function renderFlowers() {
-  const grid = document.getElementById("flowerGrid");
-  const keyword = document.getElementById("searchInput").value.toLowerCase();
+function setTab(tab, btn){
+  currentTab = tab;
+  document.querySelectorAll(".tabs button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  renderFlowers();
+}
 
-  grid.innerHTML = "";
+function filterFlower(category, btn){
+  currentFilter = category;
+  document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  renderFlowers();
+}
+
+function markFlower(id){
+  const f = flowers.find(x=>x.id===id);
+  f.marked = !f.marked;
+  saveData();
+  renderFlowers();
+}
+
+function addOwner(id){
+  const input = document.getElementById("owner-"+id);
+  const name = input.value.trim();
+  if(!name) return alert("Nhập tên thành viên cần thêm");
+  const f = flowers.find(x=>x.id===id);
+  const exists = f.owners.some(o => o.toLowerCase() === name.toLowerCase());
+  if(!exists) f.owners.push(name);
+  input.value = "";
+  saveData();
+  renderFlowers();
+}
+
+function removeOwner(id, owner){
+  const f = flowers.find(x=>x.id===id);
+  if(confirm("Xóa thành viên " + owner + " khỏi hoa này?")){
+    f.owners = f.owners.filter(o => o !== owner);
+    saveData();
+    renderFlowers();
+  }
+}
+
+function renderSummary(list){
+  const counts = {};
+  flowers.forEach(f=>counts[f.category]=(counts[f.category]||0)+1);
+  document.getElementById("totalText").innerText = flowers.length + " hoa";
+  document.getElementById("summary").innerHTML = `
+    <div class="sum-card"><b>${flowers.length}</b><br>Tổng hoa</div>
+    <div class="sum-card"><b>${counts["Hoa phẩm xanh dương"]||0}</b><br>Xanh dương</div>
+    <div class="sum-card"><b>${counts["Hoa phẩm Tím"]||0}</b><br>Tím</div>
+    <div class="sum-card"><b>${counts["Hoa phẩm Cam"]||0}</b><br>Cam</div>
+  `;
+}
+
+function renderFlowers(){
+  const grid = document.getElementById("flowerGrid");
+  const keyword = document.getElementById("searchInput").value.toLowerCase().trim();
 
   let result = flowers.filter(item => {
-    const matchColor = currentFilter === "all" || item.color === currentFilter;
-    const matchSearch = item.name.toLowerCase().includes(keyword);
-    return matchColor && matchSearch;
+    const matchCategory = currentFilter === "all" || item.category === currentFilter;
+    const matchSearch =
+      item.name.toLowerCase().includes(keyword) ||
+      item.category.toLowerCase().includes(keyword) ||
+      item.owners.join(" ").toLowerCase().includes(keyword);
+    const matchTab = currentTab === "all" || item.marked;
+    return matchCategory && matchSearch && matchTab;
   });
 
   document.getElementById("sectionTitle").innerText =
-    currentFilter === "all" ? "Tất cả hoa" : currentFilter;
+    (currentTab === "marked" ? "Đã đánh dấu - " : "") +
+    (currentFilter === "all" ? "Tất cả hoa" : currentFilter) +
+    ` (${result.length})`;
 
-  result.forEach((item, index) => {
-    grid.innerHTML += `
-      <div class="card">
-        <img src="${item.image}" alt="${item.name}">
-        <div class="card-body">
-          <h3>${item.name}</h3>
-          <span class="tag">● ${item.color}</span>
-          <span class="tag group">🏅 ${item.group}</span>
-          <br>
-          ${item.members.split(",").map(m => 
-            `<span class="tag member">👤 ${m.trim()}</span>`
-          ).join("")}
-          <br><br>
-          <button onclick="deleteFlower(${index})">Xóa</button>
+  renderSummary(result);
+  grid.innerHTML = result.map(item => `
+    <div class="card">
+      <div class="thumb">🌸</div>
+      <div class="card-body">
+        <h3>${escapeHtml(item.name)} ${item.level ? "Lv"+item.level : ""}</h3>
+        <span class="tag group">🏅 ${escapeHtml(item.category)}</span>
+        <span class="tag">${item.owners.length} thành viên</span>
+        <button onclick="markFlower(${item.id})">${item.marked ? "⭐ Bỏ" : "☆ Đánh dấu"}</button>
+        <div class="owner-box">
+          ${item.owners.length ? item.owners.map(o =>
+            `<span class="tag member" onclick="removeOwner(${item.id}, '${escapeAttr(o)}')" title="Bấm để xóa">👤 ${escapeHtml(o)}</span>`
+          ).join("") : `<span class="small">Chưa có thành viên</span>`}
+        </div>
+        <div class="add-row">
+          <input id="owner-${item.id}" placeholder="Thêm tên thành viên..." onkeydown="if(event.key==='Enter') addOwner(${item.id})">
+          <button onclick="addOwner(${item.id})">+</button>
         </div>
       </div>
-    `;
-  });
+    </div>
+  `).join("");
 }
 
-function filterFlower(color) {
-  currentFilter = color;
-  renderFlowers();
+function escapeHtml(str){
+  return String(str).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+function escapeAttr(str){
+  return escapeHtml(str).replace(/`/g, "&#96;");
 }
 
-function toggleForm() {
-  const form = document.getElementById("formBox");
-  form.style.display = form.style.display === "none" ? "block" : "none";
+function exportData(){
+  const blob = new Blob([JSON.stringify(flowers, null, 2)], {type:"application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "hoa-vien-data.json";
+  a.click();
 }
 
-function addFlower() {
-  const flower = {
-    name: document.getElementById("name").value,
-    image: document.getElementById("image").value,
-    color: document.getElementById("color").value,
-    group: document.getElementById("group").value,
-    members: document.getElementById("members").value
-  };
-
-  if (!flower.name || !flower.image) {
-    alert("Vui lòng nhập tên hoa và link ảnh");
-    return;
-  }
-
-  flowers.push(flower);
-  saveData();
-  renderFlowers();
-
-  document.getElementById("name").value = "";
-  document.getElementById("image").value = "";
-  document.getElementById("group").value = "";
-  document.getElementById("members").value = "";
-}
-
-function deleteFlower(index) {
-  if (confirm("Bạn muốn xóa hoa này?")) {
-    flowers.splice(index, 1);
+function resetData(){
+  if(confirm("Khôi phục dữ liệu gốc từ Excel? Các tên vừa thêm sẽ mất.")){
+    flowers = structuredClone(DEFAULT_FLOWERS);
     saveData();
     renderFlowers();
   }
@@ -334,6 +3036,5 @@ function deleteFlower(index) {
 
 renderFlowers();
 </script>
-
 </body>
 </html>
