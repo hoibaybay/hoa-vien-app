@@ -22,7 +22,12 @@ button.active{background:#123f25;color:white;border-color:#123f25}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
 .card{background:#fff;border:2px solid #d7eadc;border-radius:18px;overflow:hidden;box-shadow:0 3px 8px #0000000d}
 .thumb{height:130px;background:linear-gradient(135deg,#dff7ff,#ffe2f2);display:flex;align-items:center;justify-content:center;font-size:52px}
-.flower-img{width:100%;height:130px;object-fit:cover;display:block;background:#eef8f0}
+.flower-img{width:100%;
+  height:170px;
+  object-fit:contain;
+  object-position:center;
+  display:block;
+  background:#f3fff5;}
 .image-tools{margin-top:9px;display:flex;gap:6px;flex-wrap:wrap;align-items:center}
 .image-tools button{padding:7px 9px;border-radius:10px;background:#1675a1;color:#fff;border:none;font-size:12px}
 .image-tools button.danger{background:#b23b67}
@@ -44,7 +49,7 @@ button.active{background:#123f25;color:white;border-color:#123f25}
   .summary{grid-template-columns:repeat(2,1fr)}
   .grid{grid-template-columns:repeat(2,1fr);gap:10px}
   .thumb{height:105px;font-size:42px}
-  .flower-img{height:105px}
+  .flower-img{height:150px}
   .card h3{font-size:16px}
   button{padding:9px 12px}
 }
