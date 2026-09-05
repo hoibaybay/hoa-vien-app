@@ -220,6 +220,39 @@ const flowersRef = collection(db, "flowers");
 const flowerDoc = (id) => doc(db, "flowers", "flower_" + id);
 const autoConfigRef = doc(db, "auto_configs", "main_garden");
 const workerStatusRef = doc(db, "worker_status", "main_worker");
+  onSnapshot(autoConfigRef, (snap) => {
+  if (!snap.exists()) return;
+
+  const data = snap.data();
+
+  document.getElementById("autoEnabled").checked =
+    data.enabled === true;
+
+  document.getElementById("plantEnabled").checked =
+    data.plantEnabled === true;
+
+  document.getElementById("harvestEnabled").checked =
+    data.harvestEnabled === true;
+
+  document.getElementById("waterEnabled").checked =
+    data.waterEnabled === true;
+
+  document.getElementById("plantMode").value =
+    data.plantMode || "specified";
+});
+
+onSnapshot(workerStatusRef, (snap) => {
+  if (!snap.exists()) return;
+
+  const data = snap.data();
+  const statusEl = document.getElementById("autoWorkerStatus");
+
+  if (data.online === true) {
+    statusEl.textContent = "ONLINE";
+  } else {
+    statusEl.textContent = "OFFLINE";
+  }
+});
 const CLOUDINARY_CLOUD_NAME = "dgxci21i5";
 const CLOUDINARY_UPLOAD_PRESET = "lovelygar";
 
