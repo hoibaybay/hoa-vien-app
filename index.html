@@ -253,6 +253,37 @@ onSnapshot(workerStatusRef, (snap) => {
     statusEl.textContent = "OFFLINE";
   }
 });
+  async function saveAutoConfigField(field, value){
+  await updateDoc(autoConfigRef, {
+    [field]: value,
+    updatedAt: new Date().toISOString()
+  });
+}
+
+document.getElementById("autoEnabled")
+  .addEventListener("change", (e) => {
+    saveAutoConfigField("enabled", e.target.checked);
+  });
+
+document.getElementById("plantEnabled")
+  .addEventListener("change", (e) => {
+    saveAutoConfigField("plantEnabled", e.target.checked);
+  });
+
+document.getElementById("harvestEnabled")
+  .addEventListener("change", (e) => {
+    saveAutoConfigField("harvestEnabled", e.target.checked);
+  });
+
+document.getElementById("waterEnabled")
+  .addEventListener("change", (e) => {
+    saveAutoConfigField("waterEnabled", e.target.checked);
+  });
+
+document.getElementById("plantMode")
+  .addEventListener("change", (e) => {
+    saveAutoConfigField("plantMode", e.target.value);
+  });
 const CLOUDINARY_CLOUD_NAME = "dgxci21i5";
 const CLOUDINARY_UPLOAD_PRESET = "lovelygar";
 
