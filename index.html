@@ -240,11 +240,12 @@ const workerStatusRef = doc(db, "worker_status", "main_worker");
   document.getElementById("plantMode").value =
     data.plantMode || "specified";
 });
-
+let latestWorkerData = null;
 onSnapshot(workerStatusRef, (snap) => {
   if (!snap.exists()) return;
 
   const data = snap.data();
+  latestWorkerData = data;
   const statusEl = document.getElementById("autoWorkerStatus");
 
   const lastHeartbeat = data.lastHeartbeat
@@ -264,6 +265,25 @@ if (workerAlive) {
 } else {
   statusEl.textContent = "OFFLINE";
 });
+  setInterval(() => {
+  if (!latestWorkerData) return;
+
+  const statusEl = document.getElementById("autoWorkerStatus");
+
+  const lastHeartbeat = latestWorkerData.lastHeartbeat
+    ? new Date(latestWorkerData.lastHeartbeat)
+    : null;
+
+  const heartbeatAge = lastHeartbeat
+    ? Date.now() - lastHeartbeat.getTime()
+    : Infinity;
+
+  const workerAlive =
+    latestWorkerData.online === true &&
+    heartbeatAge < 15000;
+
+  statusEl.textContent = workerAlive ? "ONLINE" : "OFFLINE";
+}, 5000);
   async function saveAutoConfigField(field, value){
   await updateDoc(autoConfigRef, {
     [field]: value,
