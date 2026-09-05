@@ -166,7 +166,8 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const flowersRef = collection(db, "flowers");
 const flowerDoc = (id) => doc(db, "flowers", "flower_" + id);
-
+const autoConfigRef = doc(db, "auto_configs", "main_garden");
+const workerStatusRef = doc(db, "worker_status", "main_worker");
 const CLOUDINARY_CLOUD_NAME = "dgxci21i5";
 const CLOUDINARY_UPLOAD_PRESET = "lovelygar";
 
