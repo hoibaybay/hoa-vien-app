@@ -247,11 +247,22 @@ onSnapshot(workerStatusRef, (snap) => {
   const data = snap.data();
   const statusEl = document.getElementById("autoWorkerStatus");
 
-  if (data.online === true) {
-    statusEl.textContent = "ONLINE";
-  } else {
-    statusEl.textContent = "OFFLINE";
-  }
+  const lastHeartbeat = data.lastHeartbeat
+  ? new Date(data.lastHeartbeat)
+  : null;
+
+const heartbeatAge = lastHeartbeat
+  ? Date.now() - lastHeartbeat.getTime()
+  : Infinity;
+
+const workerAlive =
+  data.online === true &&
+  heartbeatAge < 15000;
+
+if (workerAlive) {
+  statusEl.textContent = "ONLINE";
+} else {
+  statusEl.textContent = "OFFLINE";
 });
   async function saveAutoConfigField(field, value){
   await updateDoc(autoConfigRef, {
