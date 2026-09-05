@@ -120,8 +120,8 @@ button.active{background:#123f25;color:white;border-color:#123f25}
     <button onclick="setTab('auto',this)">⚙ Auto</button>
   </div>
 
-  <div class="filter-label">Phẩm hoa</div>
-  <div class="filters category-filters">
+  <div class="filter-label"  id="categoryFilterLabel">Phẩm hoa</div>
+  <div class="filters category-filters" id="categoryFilterLabel>
     <button class="active" onclick="filterFlower('all',this)">Tất cả phẩm</button>
     <button onclick="filterFlower('Hoa Lv 40-60',this)">Lv 40-60</button>
     <button onclick="filterFlower('Hoa phẩm xanh dương',this)">🔵 Xanh dương</button>
@@ -131,8 +131,8 @@ button.active{background:#123f25;color:white;border-color:#123f25}
     <button onclick="filterFlower('Hoa phẩm xanh lá',this)">🟢 Xanh lá</button>
   </div>
 
-  <div class="filter-label">Trạng thái sở hữu</div>
-  <div class="filters ownership-filters">
+  <div class="filter-label" id="ownershipFilterLabel">Trạng thái sở hữu</div>
+  <div class="filters ownership-filters" id="ownershipFilterLabel">
     <button class="active" onclick="filterOwnership('all',this)">Tất cả</button>
     <button onclick="filterOwnership('unowned',this)">👥 Chưa ai sở hữu</button>
     <button onclick="filterOwnership('coin',this)">🪙 Hoa đổi xu</button>
@@ -4825,8 +4825,19 @@ function setTab(tab, btn){
   const flowerGrid = document.getElementById("flowerGrid");
   const autoPanel = document.getElementById("autoPanel");
   const sectionTitle = document.getElementById("sectionTitle");
-
+const categoryFilterLabel = document.getElementById("categoryFilterLabel");
+const categoryFilters = document.getElementById("categoryFilters");
+const ownershipFilterLabel = document.getElementById("ownershipFilterLabel");
+const ownershipFilters = document.getElementById("ownershipFilters");
+const searchInput = document.getElementById("searchInput");
+const summary = document.getElementById("summary");
   if(tab === "auto"){
+    categoryFilterLabel.style.display = "none";
+categoryFilters.style.display = "none";
+ownershipFilterLabel.style.display = "none";
+ownershipFilters.style.display = "none";
+searchInput.style.display = "none";
+summary.style.display = "none";
     flowerGrid.style.display = "none";
     sectionTitle.style.display = "none";
     autoPanel.style.display = "block";
@@ -4836,7 +4847,12 @@ function setTab(tab, btn){
   flowerGrid.style.display = "";
   sectionTitle.style.display = "";
   autoPanel.style.display = "none";
-
+categoryFilterLabel.style.display = "";
+categoryFilters.style.display = "";
+ownershipFilterLabel.style.display = "";
+ownershipFilters.style.display = "";
+searchInput.style.display = "";
+summary.style.display = "";
   renderFlowers();
 }
 
